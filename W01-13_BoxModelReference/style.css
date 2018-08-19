@@ -1,0 +1,54 @@
+* {
+    border: 1px solid red;
+    /* text-align: center; */
+    /* margin: 0 auto; */
+}
+
+/* 
+selector {
+    width: auto;
+    height: auto;
+    background: auto;
+    color: auto;
+    border: auto;
+    margin: auto;
+    padding: auto;
+}
+ */
+
+ body {
+     padding: 5px;
+ }
+
+.container {
+    background: orange;
+    color: auto;
+    /* border: 5px solid blue; */
+    /* margin: 10px; */
+    /* margin: 10px 20px; */
+    margin: 10px 20px 30px 40px;
+    /* padding: 10px; */
+    /* padding: 10px 20px; */
+    /* padding: 10px 20px 30px 40px; */
+    /* padding: auto; */
+    padding: 20px;
+    width: 250px;
+    height: 300px;
+}
+
+.container *{
+    background: greenyellow;
+    padding:5px;
+    margin: 5px;
+}
+
+.centered {
+    background: blueviolet;
+    color: white;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    /* The following 2 Properties allow the element to be centered inside its container */
+    width: 50%;
+    margin: 0 auto;
+}
+
