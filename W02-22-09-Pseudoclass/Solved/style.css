@@ -1,0 +1,29 @@
+a {
+    font-size: 24px;
+}
+
+/* unvisited link */
+.class1:link {
+    color: #FF0000;
+}
+
+/* visited link */
+.class2:visited {
+    color: #00FF00;
+}
+
+/* mouse over link */
+.class3:hover {
+    color: #FF00FF;
+    font-size: 48px;
+    font-family: Helvetica, sans-serif
+}
+
+/* selected link */
+.class4:active {
+    color: #0000FF;
+}
+
+li:first-child {
+    color: yellow;
+}

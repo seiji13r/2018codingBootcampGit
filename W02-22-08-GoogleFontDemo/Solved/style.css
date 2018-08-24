@@ -1,0 +1,23 @@
+/**
+ * Google Fonts Demo
+ **/
+ @import url('https://fonts.googleapis.com/css?family=Jua|Lilita+One|Montserrat+Alternates');
+/* Add in the Google Fonts of your choice */
+
+
+
+.thought1{
+    font-family: 'Jua', sans-serif;
+}
+
+.thought2{
+    font-family: 'Montserrat Alternates', sans-serif;    
+}
+
+.thought3{
+    font-family: 'Lilita One', cursive;
+}
+
+fab{
+    font-size: 50px;
+}
