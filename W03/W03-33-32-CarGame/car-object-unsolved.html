@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>My First Object</title>
+  </head>
+  <body>
+
+    <h1>Welcome to the Car Game!!!</h1>
+
+    <p>
+      Press "h" to honk the car, "w" for drive the World, "d" drive to work and 
+      "t" to Tune up.
+    </p>
+    <script>
+
+      var car = {
+        make: "Honda",
+        model: "Fit",
+        color: "Blue Raspberry",
+        mileage: 3000,
+        isWorking: true,
+
+        driveToWork: function() {
+
+          alert("Old Mileage: " + this.mileage);
+
+          this.mileage = this.mileage + 8;
+
+          alert("New mileage: " + this.mileage);
+        },
+
+        driveAroundWorld: function() {
+
+          alert("Old Mileage: " + this.mileage);
+
+          this.mileage = this.mileage + 24000;
+
+          alert("New Mileage: " + this.mileage);
+          alert("Car needs a tuneup!");
+
+          this.isWorking = false;
+        },
+
+        getTuneUp: function() {
+          alert("Car is ready to go!");
+          this.isWorking = true;
+        },
+
+        honk: function() {
+          alert("Honk! Honk!");
+        },
+
+        reWriteStats: function(){
+          console.log("Make: " + this.make);
+          console.log("Model: " + this.model);
+          console.log("Color: " + this.color);
+          console.log("Mileage: " + this.mileage);
+          console.log("Is the Car Working?: " + this.isWorking);
+          console.log("-------------------------------");
+        },
+      };
+
+      // This Function determines which key was pressed in the Keyboard.
+      document.onkeyup = function(event) {
+        // Storing the 
+        var carAction = event.key.toLowerCase();
+
+        if(carAction === "h"){
+          car.honk();
+        }
+        else if(carAction === "w"){
+          car.driveAroundWorld();
+        }
+        else if(carAction === "d"){
+          car.driveToWork();
+        }
+        else if(carAction === "t"){
+          car.getTuneUp();
+        }
+        else{
+          alert("Try Again with the correct Choice!!");
+        }
+
+        car.reWriteStats();
+      }
+    
+    </script>
+    
+  </body>
+</html>
