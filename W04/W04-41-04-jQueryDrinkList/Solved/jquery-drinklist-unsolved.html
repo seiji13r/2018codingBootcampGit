@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Content!</title>
+</head>
+<body>
+
+  <h1>Drink Selection!</h1>
+  <hr>
+
+  <div id="drink-options"></div>
+  <br/>
+  <br/>
+  <!-- Drink Selection UL -->
+  <h1>Drink Selection!</h1>
+  <hr>
+  <ul id="drink-options-ul"></ul>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript">
+
+    var drinkList = [
+      "Coffee: $5",
+      "Espresso: $7",
+      "Cappuccino: $6",
+      "Latte: $4",
+      "Tea: $3",
+      "Ice Coffee: $6",
+      "Ice Espresso: $8",
+      "Ice Latte: $6",
+      "Ice Tea: $4"
+    ];
+
+    // Using JavaScript programmatically append each drinkList item to the "drink-options" div
+    // HINT: you will need a for loop to go over each element in the list
+
+    console.log(document.querySelector('#drink-options'));
+    console.log($('#drink-options'));
+
+    for(var i = 0; i < drinkList.length; ++i){
+      $('#drink-options').append($("<p>").text(drinkList[i]));
+    }
+
+    for(var i = 0; i < drinkList.length; ++i){
+      $('#drink-options-ul').append($("<li>").text(drinkList[i]));
+    }
+
+
+    // The Following code is just for fun!!
+    // One of the Divs will be fading in and fading out.
+
+    myElapsedTime = 10000;
+
+    setTimeout(function(){
+      //do what you need here
+    }, myElapsedTime);
+
+    $('#drink-options-ul').fadeOut();
+
+    setTimeout(function(){
+      //do what you need here
+    }, myElapsedTime);
+
+    $('#drink-options-ul').fadeIn();
+
+
+  </script>
+
+</body>
+</html>
