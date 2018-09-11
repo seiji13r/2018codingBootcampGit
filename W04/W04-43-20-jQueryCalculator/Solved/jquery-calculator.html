@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Calculator</title>
+
+    <!-- Added link to the jQuery Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Added a link to Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+</head>
+<body>
+
+<!-- Jumbotron for Title -->
+<div class="jumbotron">
+    <h1 class="text-center">jQuery Calculator</h1>
+    <h3 class="text-center">Perform basic mathematic operations using the power of jQuery!</h3>
+</div>
+
+<div class="container">
+
+    <div class="row">
+
+      <!-- Calculator Card -->
+      <div class="col-lg-4">
+        <div class="card">
+          <h3 class="card-header">Calculator</h3>
+
+          <div class="card-body">
+            <button id="button-1" class="btn btn-primary number" value="1"><h1>1</h1></button>
+            <button id="button-2" class="btn btn-primary number" value="2"><h1>2</h1></button>
+            <button id="button-3" class="btn btn-primary number" value="3"><h1>3</h1></button>
+            <button id="button-plus" class="btn btn-danger operator" value="plus"><h1>+</h1></button>
+            <br><br>
+            <button id="button-4" class="btn btn-primary number" value="4"><h1>4</h1></button>
+            <button id="button-5" class="btn btn-primary number" value="5"><h1>5</h1></button>
+            <button id="button-6" class="btn btn-primary number" value="6"><h1>6</h1></button>
+            <button id="button-minus" class="btn btn-danger operator" value="minus"><h1>&minus;</h1></button>
+            <br><br>
+            <button id="button-7" class="btn btn-primary number" value="7"><h1>7</h1></button>
+            <button id="button-8" class="btn btn-primary number" value="8"><h1>8</h1></button>
+            <button id="button-9" class="btn btn-primary number" value="9"><h1>9</h1></button>
+            <button id="button-multiply" class="btn btn-danger operator" value="times"><h1>&times;</h1></button>
+            <br><br>
+            <button id="button-0" class="btn btn-primary number" value="0"><h1>0</h1></button>
+            <button id="button-divide" class="btn btn-danger operator" value="divide"><h1>&divide;</h1></button>
+            <button id="button-power" class="btn btn-danger operator" value="power"><h1>^</h1></button>
+            <button id="button-equal" class="btn btn-success equal" value="equals"><h1>=</h1></button>
+            <br><br>
+            <button id="button-clear" class="btn btn-dark clear" value="clear"><h1>clear</h1></button>
+            <button id="button-back" class="btn btn-info back" value="back"><h1>back</h1></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Result Card -->
+      <div class="col-lg-6">
+        <div class="card">
+          <h3 class="card-header">Result</h3>
+          <div class="card-body">
+            <h1 id="first-number"></h1>
+            <h1 id="operator"></h1>
+            <h1 id="second-number"></h1>
+            <hr>
+            <h1 id="result"></h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+var firstNumber = "";
+var secondNumber = "";
+var operator = "";
+var result = "";
+var operators = { 
+    "plus": "+",
+    "minus": "-",
+    "times":"*",
+    "divide":"/",
+    "power": "**"
+}
+
+  $("button").on("click", function(){
+    var button = $(this);
+    var val = button.val();
+    if (result === ""){
+      if((button).hasClass("number")){
+        if(operator === ""){
+          // console.log("This is a Number");
+          firstNumber += val;
+          console.log(firstNumber);
+          $("#first-number").text(eval(firstNumber));
+        }
+        else{
+          // console.log("This is a Number");
+          secondNumber += val;
+          console.log(secondNumber);
+          $("#second-number").text(eval(secondNumber));
+        }
+
+      }
+      if(button.hasClass("operator") && (firstNumber !== "")){
+        console.log("This is a Operator");
+        operator = operators[val];
+        $("#operator").text(button.text());
+      }
+
+      if(button.hasClass("equal")){
+        if ((firstNumber !== "") && (secondNumber !== "") && (operator !== "")){
+          console.log(firstNumber + operator + secondNumber);
+          result = eval(firstNumber + operator + secondNumber);
+          $("#result").text(result);
+          console.log(result);
+        }
+      }
+      // Back Simbol Procedure Starts
+      if((button.hasClass("back") && firstNumber !== "" && operator === "" && secondNumber === "" )){
+        // Borro ultimo caracter a la derecha de firstNumber
+        if (firstNumber.length === 1){
+          firstNumber = "";
+          $("#first-number").text("");
+        } else{
+          firstNumber = firstNumber.slice(0, -1);
+          $("#first-number").text(eval(firstNumber));
+        }
+      }
+      else if ((button.hasClass("back") && firstNumber !== "" && operator !== "" && secondNumber === "")){
+        operator = "";
+        $("#operator").text("");
+      }
+      else if ((button.hasClass("back") && firstNumber !== "" && operator !== "" && secondNumber !== "")){
+        // Borro ultimo caracter a la derecha de secondNumber
+        if (secondNumber.length === 1){
+          secondNumber = "";
+          $("#second-number").text("");
+        } else{
+          secondNumber = secondNumber.slice(0, -1);
+          $("#second-number").text(eval(secondNumber));
+        }
+      }
+    // Back Simbol Procedure Starts
+      // console.log(val);
+    }   
+    if(button.hasClass("clear")){
+        firstNumber = "";
+        secondNumber = "";
+        operator = "";
+        result = "";
+        $("#result").text("");
+        $("#first-number").text("");
+        $("#second-number").text("");
+        $("#operator").text("");
+    }
+
+  });
+
+// Your code here...
+// Your code here...
+// Detect which button was pressed
+
+
+
+// 4 scenarios
+// 1 - A number was pressed
+  // if operator defined?
+    // Append to second number
+  // else
+    // Append to first number
+// 2 - An operator was pressed
+  // if first number empty?
+    // Do nothing
+  // else
+    // Set operator
+  
+// 3 - Equal was pressed
+  // If first-number, operator and second number are valid
+    // then execute the operation and display the result
+// 4 - Clear was pressed
+  // Reset the result card
+
+});
+
+</script>
+
+</body>
+</html>
