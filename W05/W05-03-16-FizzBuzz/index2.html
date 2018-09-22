@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>FizzBuzz</title>
+</head>
+<body>
+  
+<script type="text/javascript">
+  var isPrime = function (number) {
+    if (number === 1){
+      return true;
+    }
+    else{
+      for (var i = 2; i < number; i++){
+        if (number % i === 0){
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+
+  for(var x = 1; x < 300; x++){
+    console.log("isPrime(" + x + "): " + isPrime(x));
+  }
+</script>
+</body>
+</html>

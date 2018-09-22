@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Giphy API</title>
+</head>
+
+<body>
+  <img src="" alt="">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    // Example queryURL for Giphy API
+    var queryURL = "https://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC";
+
+    var data;
+    var myTimerId;
+    var position = 0;
+
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function(response) {
+      data = response;
+    });
+
+    var getImage = function() {
+      
+      console.log(data);
+      console.log(data.data[position].images.downsized.url);
+      $('img').attr('src', data.data[position].images.downsized.url);
+
+      position++;
+      console.log(position);
+      if(position==25){
+        position = 0;
+      }
+    };
+
+    clearInterval(myTimerId);
+    setInterval(getImage,2000);
+
+
+  </script>
+
+</body>
+
+</html>
+
+
+<!-- 
+https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q=hola
+https://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC
+ -->

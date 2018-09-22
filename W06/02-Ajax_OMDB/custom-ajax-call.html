@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Custom Ajax Call</title>
+</head>
+<h1 id="title"></h1>
+<img src="" alt="" id="poster">
+<h2><span>Runtime:</span><span id="runtime"></span></h2>
+<h2><span>Country:</span><span id="country"></span></h2>
+<h2><span>Year:</span><span id="year"></span></h2>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    
+    // var url_string = "http://www.example.com/t.html?a=1&b=3&c=m2-m3-m4-m5"; //window.location.href
+    var url = new URL(window.location.href);
+    var c = url.searchParams.get("title");
+    console.log(c);
+
+    let title = "Coco";
+    let queryurl = "https://www.omdbapi.com?apikey=trilogy&t=" + title + "&plot=full"
+    // queryurl = "https://www.omdbapi.com/?apikey=trilogy&t=Jurassic+Park&plot=full"
+    $.ajax({
+      url: queryurl,
+      method: "GET"
+    }).then(function(response){
+      movie = response;
+      console.log(movie);
+      $('#poster').attr('src', movie.Poster);
+      $('#title').text(movie.Title)
+      $('#runtime').text(movie.Runtime)
+      $('#country').text(movie.Country)
+      $('#year').text(movie.Year)
+    });
+
+  </script>
+</body>
+</html>

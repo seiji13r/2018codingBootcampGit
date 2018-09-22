@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>FizzBuzz</title>
+</head>
+<body>
+  
+  <script type="text/javascript">
+    // crear un for loop de 1 a 100
+    // condicional: if number modulus 15 = 0 then console.log(FizzBuzz)
+    // condicional: if number modulus 5 = 0 then console.log(Buzz)
+    // condicional: if number modulus 3 = 0 then console.log(Fizz)
+for (var i = 1; i <= 100; i++) {
+    var modulus15 = i%15;
+    var modulus5 = i%5;
+    var modulus3 = i%3;
+    if (modulus15 === 0) {
+        console.log("FizzBuzz");
+    }
+    else if (modulus5 === 0) {
+        console.log("Buzz");
+    }
+    else if (modulus3 === 0) {
+        console.log("Fizz");
+    }
+    else{
+      console.log(i);
+    }
+};
+</script>
+</body>
+</html>
