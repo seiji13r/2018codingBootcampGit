@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Sign-Up Today!</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+    crossorigin="anonymous">
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <br>
+
+    <!-- Jumbotron -->
+    <div class="jumbotron">
+      <h1 class="text-center">Sign-Up Today!</h1>
+    </div>
+    <div class="row">
+
+      <!-- Sign-Up Card-->
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-header">
+            New Member Sign-Up
+          </div>
+          <div class="card-body">
+
+            <!-- Sign-up Form (note the various input "types")-->
+            <form role="form">
+              <div class="form-group">
+                <label for="name-input">Name:</label>
+                <input class="form-control" id="name-input" type="text">
+              </div>
+              <div class="form-group">
+                <label for="email-input">Email:</label>
+                <input class="form-control" id="email-input" type="email">
+              </div>
+              <div class="form-group">
+                <label for="age-input">Age:</label>
+                <input class="form-control" id="age-input" type="number">
+              </div>
+              <div class="form-group">
+                <label for="comment-input">How did you hear about us?</label>
+                <textarea class="form-control" id="comment-input" rows="5"></textarea>
+              </div>
+              <button class="btn btn-default" id="add-user" type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Most Recent Member Card -->
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-header">
+            Most Recent Member
+          </div>
+          <div class="card-body" id="recent-member">
+            <h2 id="name-display">Jimmy John</h2>
+            <h4 id="email-display">Email: jimmy@john.edu</h4>
+            <h4 id="age-display">Age: 27</h4>
+            <p id="comment-display">I'm signing up, because I want to spread sandwiches to the world.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Script -->
+  <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+  <script>
+    // Initialize Firebase and change the values of the config values with your own Firebase config values.
+    var config = {
+      apiKey: "AIzaSyB6IAScJz3coVAU75-57ymapfAxJRu3KZk",
+      authDomain: "fir-db1-a11b9.firebaseapp.com",
+      databaseURL: "https://fir-db1-a11b9.firebaseio.com",
+      projectId: "fir-db1-a11b9",
+      storageBucket: "fir-db1-a11b9.appspot.com",
+      messagingSenderId: "513749202316"
+    };
+    
+    firebase.initializeApp(config);
+
+
+    // Create a variable to reference the database
+    var database = firebase.database();
+
+    // Capture Button Click
+    $("#add-user").on("click", function(event) {
+      // Don't refresh the page!
+      event.preventDefault();
+
+      // YOUR TASK!!!
+      // Get inputs
+      let name = $("#name-input").val().trim();
+      let email = $("#email-input").val().trim();
+      let age = $("#age-input").val().trim();
+      let comment = $("#comment-input").val().trim();
+      console.log(name);
+      console.log(email);
+      console.log(age);
+      console.log(comment);
+      
+      // Code in the logic for storing and retrieving the most recent user.
+      // $()
+      database.ref().set({
+        name: name,
+        email: email,
+        age: age,
+        comment: comment,
+      });
+
+      // Don't forget to provide initial data to your Firebase database.
+      // By default display the content from localStorage
+
+      $("#name-display").text(name);
+      $("#email-display").text("Email: " + email);
+      $("#age-display").text("Age: " + age);
+      $("#comment-display").text(comment);
+    });
+
+
+    // Firebase watcher + initial loader HINT: .on("value")
+    database.ref().on("value", function(snapshot) {
+      console.log(snapshot.val());
+      // console.log(snapshot.val().name);
+      // console.log(snapshot.val().email);
+      // console.log(snapshot.val().age);
+      // console.log(snapshot.val().comment);
+      let name = snapshot.val().name;
+      let email = snapshot.val().email;
+      let age = snapshot.val().age;
+      let comment = snapshot.val().comment;
+
+      $("#name-display").text(name);
+      $("#email-display").text("Email: " + email);
+      $("#age-display").text("Age: " + age);
+      $("#comment-display").text(comment);
+
+    }, function(errorObject) {
+      console.log("The read failed: " + errorObject.code);
+    });
+
+    // Create Error Handling
+
+  </script>
+
+</body>
+
+</html>
