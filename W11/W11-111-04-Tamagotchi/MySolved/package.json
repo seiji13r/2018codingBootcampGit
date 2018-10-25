@@ -1,0 +1,11 @@
+{
+  "name": "tamagochi",
+  "version": "1.0.0",
+  "description": "Mi tamagochi",
+  "main": "tamagotchi.js",
+  "scripts": {
+    "test": "node tamagochi"
+  },
+  "author": "",
+  "license": "ISC"
+}

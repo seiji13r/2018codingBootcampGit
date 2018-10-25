@@ -12,7 +12,7 @@ var NodeGeocoder = require("node-geocoder");
 // Replace with your mapquest consumer API key
 var options = {
   provider: "mapquest",
-  apiKey: "YOUR-MAPQUEST-API-CONSUMER-KEY"
+  apiKey: "l9odjmNrwjywrjGv3CjZKcRtzaKEJKok"
 };
 
 var geocoder = NodeGeocoder(options);
