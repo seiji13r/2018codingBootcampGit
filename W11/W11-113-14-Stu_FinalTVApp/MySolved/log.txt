@@ -1,0 +1,55 @@
+Name: George Clooney
+Score: 78.600815
+Birthday: 1961-05-06
+Gender: Male
+Country: United States
+URL: http://www.tvmaze.com/people/24445/george-clooney
+------------------------------------------------------------
+
+Name: Tom Hanks
+Score: 70.06806
+Birthday: 1956-07-09
+Gender: Male
+Country: United States
+URL: http://www.tvmaze.com/people/46432/tom-hanks
+------------------------------------------------------------
+
+Name: Salma Hayek
+Score: 97.68297
+Birthday: 1966-09-02
+Gender: Female
+Country: Mexico
+URL: http://www.tvmaze.com/people/50634/salma-hayek
+------------------------------------------------------------
+
+Name: Salma Hayek
+Score: 97.68297
+Birthday: 1966-09-02
+Gender: Female
+Country: Mexico
+URL: http://www.tvmaze.com/people/50634/salma-hayek
+------------------------------------------------------------
+
+Name: Luis Gerardo Méndez
+Score: 19.035503
+Birthday: null
+Gender: Male
+URL: http://www.tvmaze.com/people/81148/luis-gerardo-mendez
+------------------------------------------------------------
+
+Name: Salma Hayek
+Score: 97.68297
+Birthday: 1966-09-02
+Gender: Female
+Country: Mexico
+URL: http://www.tvmaze.com/people/50634/salma-hayek
+------------------------------------------------------------
+
+Name: Salma Hayek
+Score: 97.68297
+Birthday: 1966-09-02
+Gender: Female
+Country: Mexico
+URL: http://www.tvmaze.com/people/50634/salma-hayek
+------------------------------------------------------------
+
