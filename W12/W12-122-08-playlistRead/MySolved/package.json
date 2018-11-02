@@ -1,0 +1,14 @@
+{
+  "name": "myplaylist.js",
+  "version": "1.0.0",
+  "description": "A play List Example",
+  "main": "myplaylist.js",
+  "scripts": {
+    "test": "node myplaylist.js"
+  },
+  "author": "Seiji Osada",
+  "license": "ISC",
+  "dependencies": {
+    "mysql": "^2.16.0"
+  }
+}
