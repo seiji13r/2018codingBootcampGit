@@ -1,11 +1,12 @@
 var mysql = require("mysql");
 
+// Capture the Column Name from Arguments
 column = process.argv[2];
+// console.log(column);
+
+// Capture the Search String
 search = process.argv.splice(3).join(" ");
-
-console.log(column);
-
-console.log(search);
+// console.log(search);
 
 var connection = mysql.createConnection({
   host: "192.168.1.240",
