@@ -1,16 +1,16 @@
 var mysql = require("mysql");
 
 var connection = mysql.createConnection({
-  host: "localhost",
+  host: "192.168.1.240",
 
   // Your port; if not 3306
   port: 3306,
 
   // Your username
-  user: "root",
+  user: "myroot",
 
   // Your password
-  password: "",
+  password: "myroot",
   database: "ice_creamDB"
 });
 
