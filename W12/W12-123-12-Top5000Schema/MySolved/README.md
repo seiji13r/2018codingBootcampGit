@@ -11,3 +11,11 @@
 * BONUS: Create a `seeds.sql` file that contains the data for the first three songs found within `TopSongs.csv`
 
 * BONUS: Look into how MySQL Workbench can import and export data files. What file types does it accept? How does it convert the data?
+
+Popularity
+
+raw
+usa score
+uk
+erope
+rest of the world

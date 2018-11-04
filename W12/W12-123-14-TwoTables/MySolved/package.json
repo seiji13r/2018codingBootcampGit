@@ -1,0 +1,16 @@
+{
+  "name": "mysolved",
+  "version": "1.0.0",
+  "description": "* When dealing with big databases, it is very likely that you will have to work with two or more datasets that are related, but which have some degree of separation between them. In this case we have a table of the top 5000 songs and a table of the top 3000 albums.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cli-table3": "^0.5.1",
+    "inquirer": "^6.2.0",
+    "mysql": "^2.16.0"
+  }
+}
