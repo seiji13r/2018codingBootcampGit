@@ -1,4 +1,3 @@
-
 DROP DATABASE IF EXISTS topsongs_db;
 CREATE DATABASE topsongs_db;
 USE topsongs_db;

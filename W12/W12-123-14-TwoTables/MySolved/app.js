@@ -24,10 +24,10 @@ function inquire(){
         
     }]).then(function(res){
     
-        var query="SELECT top5000.rank AS song_rank, top5000.artist,top5000.song, albums.title AS album_name, top5000.year  FROM top5000 INNER JOIN albums ON top5000.artist=albums.artist WHERE (top5000.year=albums.year)&&(top5000.?)";
+        var query="SELECT Top5000.rank AS song_rank, Top5000.artist,Top5000.song, albums.title AS album_name, Top5000.year  FROM Top5000 INNER JOIN albums ON Top5000.artist=albums.artist WHERE (Top5000.year=albums.year)&&(Top5000.?)";
         connection.query(query,{artist:res.userInput},function(err,res){
-            console.log(res);
-            // printTable(res);
+            // console.log(res);
+            printTable(res);
 
         });
         connection.end();

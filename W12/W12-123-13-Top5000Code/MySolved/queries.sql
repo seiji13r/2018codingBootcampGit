@@ -7,3 +7,7 @@ SELECT * FROM topsongs_db.Top5000 WHERE year BETWEEN 1982 AND 1982;
 SELECT * FROM topsongs_db.Top5000 WHERE rawscore BETWEEN 30 AND 50;
 -- Fourth Option  [Specific Song]
 SELECT * FROM topsongs_db.Top5000 WHERE song = "Survivor";
+
+
+-- Select All
+SELECT * FROM topsongs_db.Top5000
