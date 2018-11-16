@@ -11,6 +11,7 @@ To run this file, we do the following in our Terminal:
 */
 
 -- Create the database task_saver_db and specified it for use.
+DELETE DATABASE IF EXISTS task_saver_db;
 CREATE DATABASE task_saver_db;
 USE task_saver_db;
 
