@@ -1,3 +1,5 @@
+USE pets_db;
+
 INSERT INTO buyers (buyer_name) VALUES ('Kevon');
 INSERT INTO buyers (buyer_name) VALUES ('Jane');
 
@@ -6,3 +8,6 @@ INSERT INTO pets (animal_breed, animal_name, price, buyer_id) VALUES ('bear', 'R
 INSERT INTO pets (animal_breed, animal_name, price, buyer_id) VALUES ('hawk', 'Tobias', 850, 2);
 INSERT INTO pets (animal_breed, animal_name, price, buyer_id) VALUES ('gorilla', 'Marco', 400, 2);
 INSERT INTO pets (animal_breed, animal_name, price, buyer_id) VALUES ('tiger', 'Jake', 300, 2);
+
+SELECT * FROM buyers;
+SELECT * FROM pets;
