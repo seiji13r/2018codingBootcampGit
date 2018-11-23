@@ -1,0 +1,12 @@
+DROP DATABASE IF EXISTS chirpy;
+CREATE DATABASE chirpy;
+USE chirpy;
+
+CREATE TABLE chirps (
+  -- TABLE CODE TO GO HERE
+  id INT AUTO_INCREMENT NOT NULL,
+  author VARCHAR(30),
+  chirps VARCHAR(128),
+  time_created DATETIME,
+  PRIMARY KEY(id)
+);
