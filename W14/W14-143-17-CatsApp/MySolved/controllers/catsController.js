@@ -17,6 +17,7 @@ router.get("/", function(req, res) {
 });
 
 router.post("/api/cats", function(req, res) {
+  console.log(req.body)
   cat.create([
     "name", "sleepy"
   ], [
