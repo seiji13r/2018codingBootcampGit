@@ -1,10 +1,10 @@
 {
-  "name": "W16-163-12-Stu_Titleize",
+  "name": "W16-163-12-",
   "version": "1.0.0",
   "description": "In this activity we will write a function that should title-case a given string and write a test for it.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --reporter nyan"
   },
   "keywords": [],
   "author": "",
