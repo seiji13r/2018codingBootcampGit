@@ -1,0 +1,21 @@
+{
+  "development": {
+    "username": "myroot",
+    "password": null,
+    "database": "exampledb",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "myroot",
+    "password": null,
+    "database": "testdb",
+    "host": "localhost",
+    "dialect": "mysql",
+    "logging": false
+  },
+  "production": {
+    "use_env_variable": "JAWSDB_URL",
+    "dialect": "mysql"
+  }
+}
