@@ -15,7 +15,14 @@
   - [List Documents](#list-documents)
   - [Update Documents](#update-documents)
   - [Remove Documents](#remove-documents)
-  - [Remove Documents](#remove-documents-1)
+  - [Query Documents](#query-documents)
+    - [Single Match](#single-match)
+    - [Multiple Match with $or](#multiple-match-with-or)
+    - [Multiple Match with `$lt` `$gt` `$lte` `$gte`](#multiple-match-with-lt-gt-lte-gte)
+    - [Match by referencing properties inside objects](#match-by-referencing-properties-inside-objects)
+    - [Sorting](#sorting)
+    - [Counting](#counting)
+    - [forEach](#foreach)
 - [End to End Example](#end-to-end-example)
 - [Reference](#reference)
 
@@ -128,13 +135,43 @@ db.collectionName.remove({match})
 db.collectionName.remove({match}, {justOne:true});
 ```
 
-## Remove Documents
+## Query Documents
+### Single Match
+### Multiple Match with $or
+### Multiple Match with `$lt` `$gt` `$lte` `$gte`
+### Match by referencing properties inside objects
+### Sorting
+### Counting 
+### forEach
 
 ```javascript
-db.collectionName.remove({match})
-db.collectionName.remove({match}, {justOne:true});
-// Remove All
-db.customers.remove({});
+// Queries
+// Single Match
+db.customer.find({first_name: "Sharon"});
+db.customer.find({gender: "male"});
+
+// Multiple Match with $or
+db.customer.find({$or:[{first_name: "Sharon"},{first_name: "Troy"}]);
+
+// Query with greater and lower than $lt $gt $lte $gte
+db.customer.find({age:{$lt:40}});
+
+// Query Per Object Properties inside the Document.
+// Don't forget to wrap with ""
+db.customer.find({"address.city":"Boston"}); // OK
+db.customer.find({address.city:"Boston"}); // NOT OK
+
+// Sorting
+db.customers.find().sort({last_name: -1}).pretty();
+
+// Counting
+db.customers.find().count();
+
+// Limit
+db.customers.find().limit(2).pretty();
+
+// forEach
+db.customers.find().forEach(doc => print("Customer Name: " + doc.first_name));
 ```
 
 # End to End Example
