@@ -24,8 +24,21 @@ for (var index = 0; index < arraySize; index++) {
 // ================================================
 
 function quickSort(items) {
-  items.sort();
-  return items;
+  if (items.length <= 1) {
+    return items;
+  }
+  let pivot = items[items.length - 1];
+  let leftSide = [];
+  let rightSide = [];
+  for (let i = 0; i < items.length - 1; i++) {
+    if (items[i] < pivot) {
+      leftSide.push(items[i]);
+    } else {
+      rightSide.push(items[i]);
+    }
+  }
+  // return [].concat(quickSort(leftSide), [pivot], quickSort(rightSide));
+  return quickSort(leftSide).concat(pivot, quickSort(rightSide));
 }
 
 // ================================================

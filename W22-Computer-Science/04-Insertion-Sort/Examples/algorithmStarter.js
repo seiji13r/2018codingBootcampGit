@@ -19,10 +19,35 @@ for (var index = 0; index < arraySize; index++) {
   array.push(randomNumber);
 }
 
+function swap(items, firstIndex, secondIndex) {
+  var temp = items[firstIndex];
+  items[firstIndex] = items[secondIndex];
+  items[secondIndex] = temp;
+}
+
+// for i ← 1 to length(A) - 1
+//    j ← i
+//    while j > 0 and A[j-1] > A[j]
+//        swap A[j] and A[j-1]
+//        j ← j - 1
+//    end while
+// end for
+
 // ================================================
 // SOLUTION - Insertion Sort
 // ================================================
 
+function insertionSort(array) {
+  var j;
+  for(var i=1;i<array.length;i++){
+    j=i;
+    while(j>0&&array[j-1]>array[j]){
+      swap(array,j,j-1);
+      j--;
+    }
+  }
+  return array;
+}
 
 // ================================================
 // FUNCTION CALL
