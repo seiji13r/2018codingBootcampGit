@@ -11,7 +11,7 @@ function binarySearch(numbersArr, searchElement) {
 
   // This is the main loop.
   while (minIndex <= maxIndex) {
-
+    console.log("Itereation Here")
     // Get a position near the middle.
     currentIndex = Math.floor((minIndex + maxIndex) / 2);
 

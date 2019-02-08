@@ -9,14 +9,15 @@ Assume the _worst case_ running time—i.e., consider only the _maximum_ number 
 What is the running time of...
 
 * Selection sort? 
-
+    O(n^2)
 * Insertion sort?
-
+    O(n^2)
 * Linear search?
-
+    O(n)
 * Binary search?
-
+    O(log2 n)
 * Finding duplicates in an array?
+    O(n^2)
 
 ### BONUSES
 
@@ -28,6 +29,20 @@ What is the running time for an algorithm that—
 
   * E.g.: `threeSum(list, search)` will find all possible triplets of numbers in `list` that sum to `search`.
 
+    list = [1, 2, 3, 4]
+    n = 6
+
+    1 + 2 + 3 = n
+    2 + 3 + 4 = n
+    2 + 3 + 4 = n 
+
+
+    O(n^3)
+
 * Same question, but for doubles?
+    
+    O(n^2)
 
   * In general, what is the running time for finding n-tuples in `list` that sum to `search`?
+
+    O(n^n)
